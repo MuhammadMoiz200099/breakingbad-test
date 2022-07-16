@@ -1,0 +1,13 @@
+ion-content {
+  padding-bottom: 10px;
+  padding-top: 0px;
+}
+  
+ion-header{
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+ion-title{
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
