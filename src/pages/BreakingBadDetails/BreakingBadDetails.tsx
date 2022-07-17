@@ -2,7 +2,7 @@ import './BreakingBadDetails.css';
 import { useEffect } from "react";
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSelectedCharacters } from "../../redux/slices/breakingbad";
+import { getSelectedCharacters, emptyCharacter } from "../../redux/slices/breakingbad";
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonItem } from '@ionic/react';
 import { arrowBack } from 'ionicons/icons';
 import BreakingDetails from "../../components/BreakingDetails";
@@ -16,6 +16,10 @@ const BreakingBadDetails: React.FC = () => {
   useEffect(() => {
     if(id) {
       initUIData();
+    }
+
+    return () => {
+      dispatch(emptyCharacter())
     }
   }, [])
 

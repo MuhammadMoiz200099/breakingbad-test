@@ -40,6 +40,9 @@ export const breakingBadSlice: any = createSlice({
   name: "breakingBad",
   initialState,
   reducers: {
+    emptyCharacter: (state: any) => {
+      state.character = null;
+    }
   },
   extraReducers: {
     [getAllCharacters.pending]: (state: any) => {
@@ -69,4 +72,5 @@ export const breakingBadSlice: any = createSlice({
   },
 });
 
+export const { emptyCharacter } = breakingBadSlice.actions;;
 export default breakingBadSlice.reducer;
