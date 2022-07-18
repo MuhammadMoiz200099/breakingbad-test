@@ -1,8 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '../utils/test-utils';
 import Home from './Home';
 
-test('renders without crashing', () => {
-  const { baseElement } = render(<Home />);
-  expect(baseElement).toBeDefined();
+describe('Home Page Test', () => {
+  it('Should check the main title', () => {
+    const container = render(<Home />);
+    const value = container.getByTestId('classtitle');
+    expect(value.innerHTML).toBe('Breaking Bad')
+  });
+  it('Should be defined back icon', () => {
+    const container = render(<Home />);
+    const value = container.getByTestId('classsubtitle');
+    expect(value.innerHTML).toBe('Breaking Bad Characters');
+  });
 });

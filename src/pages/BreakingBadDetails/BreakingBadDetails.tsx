@@ -8,6 +8,7 @@ import { arrowBack } from 'ionicons/icons';
 import BreakingDetails from "../../components/BreakingDetails";
 
 const BreakingBadDetails: React.FC = () => {
+  const maintitle = "Breaking Bad";
   const title = "Character";
   const { id } = useParams<{ id: string }>();
   const dispatch =  useDispatch();
@@ -34,16 +35,16 @@ const BreakingBadDetails: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Breaking Bad</IonTitle>
+          <IonTitle data-testid='maintitle'>{maintitle}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonItem class="header">
           <IonItem routerLink="/">
-            <IonIcon icon={arrowBack} class="pointer"></IonIcon>
+            <IonIcon data-testid='backicon' icon={arrowBack} class="pointer"></IonIcon>
           </IonItem>
           {character && (
-              <IonTitle>{`${title} > ${character.name}`}</IonTitle>
+              <IonTitle data-testid='charactertitle'>{`${title} > ${character.name}`}</IonTitle>
           )}
         </IonItem>
         {character && <BreakingDetails details={character} />}

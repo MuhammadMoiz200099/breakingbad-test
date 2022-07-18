@@ -16,6 +16,8 @@ import './Home.css';
 import { getAllCharacters } from "../redux/slices/breakingbad";
 
 const Home: React.FC = () => {
+  const title = 'Breaking Bad';
+  const subtitle = 'Breaking Bad Characters';
   const dispatch =  useDispatch();
   const characters = useSelector((state: any) => state.breaking.characters);
 
@@ -32,13 +34,13 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Breaking Bad</IonTitle>
+          <IonTitle data-testid='classtitle'>Breaking Bad</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
           <IonListHeader>
-            <IonLabel>Breaking Bad Characters</IonLabel>
+            <IonLabel data-testid='classsubtitle'>Breaking Bad Characters</IonLabel>
           </IonListHeader>
           {characters && characters.length ? (
             <>

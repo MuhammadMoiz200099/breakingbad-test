@@ -1,8 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from './utils/test-utils';
 import App from './App';
 
-test('renders without crashing', () => {
-  const { baseElement } = render(<App />);
-  expect(baseElement).toBeDefined();
+describe('App Page Test', () => {
+  test('Should be render', () => {
+    const container = render(<App />);
+    expect(container).toBeDefined();
+  });
 });
